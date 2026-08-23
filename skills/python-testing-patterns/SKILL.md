@@ -86,10 +86,8 @@ Skip rigid TDD ritual for pure exploration spikes; add tests before stabilizing 
 - [ ] Test runtime stays reasonable
 
 ## Related Skills
-- Use **python-pro** for implementation style and project tooling.
-- Use **python-concurrency** when tests involve async/concurrent behavior.
-- Use **python-performance-optimization** only when tests are specifically for performance diagnosis.
-- Use **code-review-and-quality** as a final quality gate.
+- Use with **python-pro** and **python-concurrency** to protect implementation changes.
+- Use **code-review-and-quality** as the final quality gate before merge.
 
 ## Output Expectations
 - Clear recommendation of test layers needed

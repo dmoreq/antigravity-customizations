@@ -30,8 +30,10 @@ Expert guidance for selecting and implementing the right concurrency or parallel
 - Non-Python technology stacks
 
 ## Related Skills
-- Use **Python Performance Optimization** first when the bottleneck is unclear.
-- After applying concurrency/parallelism changes, re-measure with the Performance skill to validate gains.
+- Use **python-patterns** when the broader architecture choice is still open.
+- Use **python-performance-optimization** to measure whether concurrency/parallelism actually helps.
+- Use **python-testing-patterns** for async/concurrent test coverage.
+- Use **code-review-and-quality** before merge.
 
 ---
 

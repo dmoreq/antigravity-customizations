@@ -58,6 +58,10 @@ If the question covers multiple distinct topics, make separate `query-docs` call
 - Works well with common Python libraries: FastAPI, Pydantic, SQLAlchemy, pandas, Polars, httpx, uv, ruff, etc.
 - Prefer the official/primary package when multiple matches appear.
 
+## Related Skills
+- Support **python-pro**, **python-concurrency**, **tech-research**, and **data-scientist** with up-to-date library/API documentation.
+- Do not replace **tech-research** when the task needs approach comparison or SOTA survey.
+
 ## Final Checklist
 - [ ] User query actually requires up-to-date documentation (not just general knowledge)
 - [ ] Correct library ID resolved (official/primary package prioritized)

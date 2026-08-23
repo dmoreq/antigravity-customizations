@@ -22,6 +22,10 @@ Decision-making principles for Python architecture, framework choice, async desi
 - Non-Python stacks
 - Simple one-off scripts with no architectural decisions
 
+## Related Skills
+- Use **python-pro** once architecture and design decisions are made and implementation is needed.
+- Use **python-concurrency** when choosing among asyncio, threads, and processes.
+
 ## 1. Framework Selection
 Choose based on context, not habit.
 

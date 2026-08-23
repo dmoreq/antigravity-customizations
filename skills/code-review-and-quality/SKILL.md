@@ -115,10 +115,10 @@ Prefer standard library and existing utilities.
 After review/refactor, identify newly unused code and ask before deleting when uncertain.
 
 ## Related Skills
-- `python-testing-patterns` for test design quality
-- `python-performance-optimization` for measured performance concerns
-- `python-pro` / `python-patterns` for implementation and architecture conventions
-- `context7-mcp` when API/docs verification is needed
+- Send implementation fixes to **python-pro**.
+- Use **python-testing-patterns** when tests are missing or weak.
+- Use **python-performance-optimization** only for confirmed runtime concerns.
+- Use **context7-mcp** when reviewing API usage against current docs.
 
 ## Review Checklist
 - [ ] Intent and scope are understood

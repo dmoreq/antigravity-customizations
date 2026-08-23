@@ -85,10 +85,10 @@ Produce a structured report covering:
 - Stop when metric targets are met or gains are no longer worth the complexity
 
 ## Related Skills
-- Use **Python Performance Optimization** when the issue is runtime/resource efficiency
-- Use **Tech Research** when alternative algorithms or SOTA methods are needed
-- Use **Data Scientist** when statistical evaluation, segmentation, or deeper analysis is required
-- Use **Antigravity Reporting** for the final structured report
+- Use **tech-research** when better algorithms, methods, or SOTA options are needed.
+- Use **data-scientist** for deeper statistical analysis, segmentation, or metric diagnosis.
+- Use **python-performance-optimization** when the bottleneck is runtime, memory, or I/O efficiency.
+- Follow **antigravity-reporting** for the final before/after optimization report.
 
 ## Final Checklist
 - [ ] Baseline run completed and metrics collected

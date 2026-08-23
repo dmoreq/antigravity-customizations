@@ -75,6 +75,11 @@ Keep only the 3–5 most relevant options.
 - Do not overstate benefits; clearly state limitations
 - Keep the output concise and decision-focused
 
+## Related Skills
+- Use **algorithm-and-process-optimization** when candidate approaches need validation on real data and KPIs.
+- Use **context7-mcp** when accurate, up-to-date library/API docs are required.
+- Follow **antigravity-reporting** when producing a structured comparison or formal research write-up.
+
 ## Final Checklist
 - [ ] Scope and constraints are clearly understood
 - [ ] Both modern and classic approaches are considered

@@ -21,9 +21,9 @@ Transform analysis into clear, decision-ready narratives for stakeholders.
 - Technical deep-dives for other data scientists
 - Simple metric reporting without narrative need
 
-## Input Expectation
-- Base the narrative on validated findings from **Data Scientist** (or equivalent analysis).
-- Do not invent insights without supporting evidence.
+## Related Skills
+- Base narratives on validated findings from **data-scientist**.
+- Follow **antigravity-reporting** only when the story is part of a formal technical report.
 
 ## Core Structure
 Use this flow for most stories:

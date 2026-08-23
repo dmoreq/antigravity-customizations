@@ -23,8 +23,10 @@ Use this skill for data science tasks: exploratory analysis, statistical modelin
 - Tasks outside data science / analytics scope
 
 ## Related Skills
-- When findings need to be communicated to non-technical stakeholders or turned into a decision narrative, use **Data Storytelling**.
-- When producing a formal analysis report, follow **Antigravity Reporting** standards.
+- Use **algorithm-and-process-optimization** when findings should drive iterative KPI improvement on real cases.
+- Use **data-storytelling** when results must be communicated to non-technical stakeholders.
+- Use **context7-mcp** for library/API documentation when needed.
+- Follow **antigravity-reporting** when producing a formal analytical report.
 
 ## Core Approach
 1. **Clarify Objectives**: Clarify the business goal, success metrics, constraints, and available data.

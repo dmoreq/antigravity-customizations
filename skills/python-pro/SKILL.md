@@ -20,6 +20,13 @@ Expert guidance for writing clean, typed, and production-ready Python code, with
 - Non-Python stacks
 - Basic syntax questions only
 
+## Related Skills
+- Use **python-patterns** for framework, structure, and architecture decisions.
+- Use **python-concurrency** for async/parallel implementation choices.
+- Use **python-testing-patterns** to protect behavior with tests.
+- Use **context7-mcp** for current library/API documentation.
+- Use **code-review-and-quality** before merge.
+
 ## Version Handling
 - Always confirm the target Python version first.
 - If the project is on Python 3.12+: use modern features and tooling freely.

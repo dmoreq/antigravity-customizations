@@ -23,10 +23,10 @@ Practical guidance for finding and fixing real performance problems in Python co
 - Non-Python performance issues
 
 ## Related Skills
-- If the bottleneck is I/O-bound or CPU-bound concurrency, use **Python Concurrency** for implementation choices.
-- If the bottleneck type or optimization approach is unclear, use **Tech Research** to survey better algorithms, libraries, or SOTA methods.
-- If the problem involves data analysis, modeling, metrics, or experiment design, use **Data Scientist**.
-- After applying changes, re-measure to confirm real gains.
+- Use **tech-research** when a better algorithm/library may be required.
+- Use **data-scientist** when the issue involves analytical metrics or model behavior.
+- Use **python-concurrency** when the bottleneck is I/O-bound or CPU-parallel.
+- Use **algorithm-and-process-optimization** when optimizing quality KPIs on real cases rather than pure runtime.
 
 ## Core Principles
 1. **Measure first** — never optimize based on guesses.

@@ -14,8 +14,8 @@ Guidance for creating clean, professional technical reports, benchmark evaluatio
 Use this skill for formal reports, benchmark summaries, architecture analyses, or data storytelling.  
 Skip formal reports and visuals for simple answers — prefer concise text + tables.
 
-## When Other Skills Should Use This
-- Use this skill’s standards when **Tech Research** or **Data Scientist** needs a structured report, comparison, or formal write-up.
+## Related Skills
+- Use as the presentation standard for **tech-research**, **data-scientist**, and **algorithm-and-process-optimization** when a formal report is required.
 - Do not force full report format for short intermediate answers.
 
 ---
