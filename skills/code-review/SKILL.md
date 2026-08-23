@@ -116,6 +116,7 @@ After review/refactor, identify newly unused code and ask before deleting when u
 
 ## Related Skills
 - Send implementation fixes to **python-pro**.
+- Use **code-simplification** when complexity, deep nesting, or duplication is flagged.
 - Use **python-testing** when tests are missing or weak.
 - Use **python-performance** only for confirmed runtime concerns.
 - Use **context7-mcp** when reviewing API usage against current docs.

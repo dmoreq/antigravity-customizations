@@ -14,6 +14,7 @@ antigravity-customizations/
 │   ├── algorithm-optimization/      # Systematic KPI & algorithm improvement loop
 │   ├── antigravity-reporting/       # Technical reporting, benchmarks & 2-tier visualization
 │   ├── code-review/                 # Multi-axis code review checklist before merging
+│   ├── code-simplification/         # Safe refactoring, reducing nesting & accidental complexity
 │   ├── context7-mcp/                # Live documentation lookup for libraries/frameworks
 │   ├── data-science/                # EDA, modeling, statistics, causal inference & A/B testing
 │   ├── data-storytelling/           # Decision-ready narratives for business stakeholders
@@ -46,6 +47,7 @@ antigravity-customizations/
 | **`python-performance`** | Measure-first, profile-driven optimization with `cProfile`, `py-spy`, and memory profilers. |
 | **`python-testing`** | Pytest strategies, focused fixtures, mocking, and robust test suites. |
 | **`code-review`** | Systematic code review across correctness, security, performance, and style. |
+| **`code-simplification`** | Safe refactoring to improve readability and reduce nesting without changing behavior. |
 | **`context7-mcp`** | Fetching up-to-date documentation and code references via Context7 MCP. |
 
 ---
