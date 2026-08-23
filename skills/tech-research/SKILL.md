@@ -57,9 +57,14 @@ Keep only the 3–5 most relevant options.
 - Clearly state trade-offs and risks
 - Suggest practical next steps: POC, benchmark on real data, decision criteria for migration
 
-## Output Guidance
+## Output Guidance & ADR Format
 - For short answers, respond directly and concisely.
-- When producing a structured comparison, evaluation, or formal write-up, follow **Antigravity Reporting** standards.
+- When producing a structured comparison or formal write-up, follow **Antigravity Reporting** standards.
+- **Architecture Decision Record (ADR) (Optional)**: When research concludes with a significant architectural decision, structure the outcome as:
+  - **Context**: Problem background, requirements, and key constraints.
+  - **Decision**: Chosen solution, framework, or algorithm.
+  - **Alternatives Considered**: Evaluated candidates and why they were rejected.
+  - **Consequences**: Expected gains, operational trade-offs, and migration risks.
 
 ## Output Structure
 1. **Recommendation** at the top

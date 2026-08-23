@@ -76,6 +76,13 @@ Use TDD when it improves design clarity:
 
 Skip rigid TDD ritual for pure exploration spikes; add tests before stabilizing the code.
 
+## Systematic Debugging (Bug Fixing Loop)
+When diagnosing and fixing bugs, follow this 4-step loop:
+1. **Reproduce**: Write a minimal, deterministic failing test reproducing the exact issue.
+2. **Isolate**: Locate the exact line/boundary where actual state diverges from expected state.
+3. **Fix**: Implement the minimal, clean fix for the root cause.
+4. **Guard**: Keep the failing test as a permanent **regression test** to prevent future recurrence.
+
 ## Test Design Checklist
 - [ ] Behavior under test is clear
 - [ ] Test is deterministic and isolated

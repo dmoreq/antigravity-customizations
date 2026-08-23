@@ -115,6 +115,12 @@ Apply these pragmatically, not dogmatically:
 - Use OOP when it clarifies the domain; prefer composition over deep inheritance
 - Write tests for critical behavior; use TDD when it improves design, not as a ritual
 
+## Documenting Architectural Decisions (Optional ADR)
+When establishing significant project-level choices (e.g. Framework selection, Async vs Sync, ORM vs Raw SQL), record a short ADR summary:
+- **Context**: Constraints and technical drivers.
+- **Decision**: Chosen pattern/architecture.
+- **Consequences**: Trade-offs accepted and operational impact.
+
 ## Core Decision Checklist
 - [ ] Framework chosen based on actual context (not default habit)
 - [ ] Async vs sync decision is justified

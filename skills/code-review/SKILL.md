@@ -50,12 +50,16 @@ Do not block only because the solution is not exactly how you would have written
 - Prefers deleting complexity over relocating it
 - Reuses canonical helpers instead of near-duplicates
 
-### 4. Security
-- No secrets in code, logs, or commits
-- Input validated at trust boundaries
-- AuthZ/AuthN enforced where required
-- Queries/commands parameterized
-- External data treated as untrusted
+### 4. Security (Boundary Checklist)
+- **Always**:
+  - Validate and sanitize all input at trust boundaries (APIs, public interfaces)
+  - Parameterize all database queries (zero string concatenation in SQL/commands)
+  - Encode output to prevent injection and XSS
+  - Enforce explicit AuthN/AuthZ checks on protected resources
+- **Never**:
+  - Log secrets, tokens, passwords, or sensitive PII
+  - Trust client-side validation as a security boundary
+  - Expose raw internal stack traces or system details to clients
 
 ### 5. Performance
 - No N+1 or unbounded work on hot paths
@@ -85,15 +89,11 @@ If deeper investigation is needed:
 
 Lead with high-leverage issues. A few strong findings beat a long nit list.
 
-## Change Sizing
-- ~100 lines changed: ideal
-- ~300 lines: acceptable if one logical change
-- ~1000+ lines: usually too large — split
-
-Prefer:
-- One concern per change
-- Separate refactor from feature behavior
-- Split strategies: stacked PRs, vertical slices, shared foundation first
+## Change Sizing & Git Discipline
+- **Sizing targets**: ~100 lines changed (ideal), ~300 lines (acceptable for single logical change), >1000 lines (split required).
+- **Atomic Commits**: Each commit must represent a single, self-contained logical unit.
+- **Slicing Strategies**: Split large changes into vertical slices, shared foundation PRs, or stacked PRs.
+- **Isolate Refactors**: Strictly separate pure refactoring from behavioral/feature changes into distinct commits/PRs.
 
 ## Structural Remedies
 When flagging structure problems, propose a concrete move:

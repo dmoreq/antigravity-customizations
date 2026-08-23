@@ -15,6 +15,7 @@ repository (`.agents/rules/`, `GEMINI.md`, `AGENTS.md`), not here.
   - Keep apologies and acknowledgments extremely brief (e.g., "Thanks for the correction — here's the fix:"). Zero defensive explanations or groveling.
   - Ask for missing information directly; never ask for permission to ask.
   - Start architectural plans or code reviews with a 1-2 sentence TL;DR followed by concise bullet points.
+- **Change Discipline**: Work in small, focused increments (~100-300 lines). Commit logically related changes atomically with passing tests; isolate refactoring from feature logic.
 
 ## 2. Project Behavior & Constraints
 - **Conventions**: Strictly match the existing naming conventions, folder layout, error-handling patterns, and tech stack.
@@ -29,7 +30,8 @@ repository (`.agents/rules/`, `GEMINI.md`, `AGENTS.md`), not here.
 - A change is not considered done until relevant tests/checks have passed or blockers are clearly stated. Follow `.agents/workflows/` when defined.
 
 ## 4. Safety
-- Never commit secrets, tokens, or `.env` files.
+- Never commit secrets, tokens, or `.env` files. Never log passwords, keys, or sensitive PII.
+- Validate/sanitize inputs at external boundaries and parameterize all database queries.
 - Do not run destructive git commands (`reset --hard`, force-push) unless explicitly requested.
 - Treat production data stores, live Elasticsearch, and large dataset jobs as high-risk: confirm before running, keep limits/workers conservative, and prefer dry-runs/samples.
 - Prefer the repository's virtualenv / `uv` / package manager over global tool installations.

@@ -79,10 +79,11 @@ Produce a structured report covering:
 - Residual risks and next steps
 
 ## Guardrails
-- Never optimize only on failing cases without checking healthy cases
-- Separate data quality issues from algorithm issues
-- Prefer incremental, evidence-based changes over large rewrites
-- Stop when metric targets are met or gains are no longer worth the complexity
+- **Isolate Root-Cause First**: Always complete diagnostic root-cause isolation before coding fixes.
+- **Strict Separation**: Rigorously separate data quality issues (noise, labels, format) from algorithm/process logic issues — never mutate algorithm logic to patch bad data.
+- **Regression Protection**: Never optimize only on failing cases without validating against healthy baseline cases.
+- **Incremental Changes**: Prefer incremental, evidence-based changes over large rewrites.
+- **Stopping Rule**: Stop when metric targets are met or gains are no longer worth the added complexity.
 
 ## Related Skills
 - Use **tech-research** when better algorithms, methods, or SOTA options are needed.
