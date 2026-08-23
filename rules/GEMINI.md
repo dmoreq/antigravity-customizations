@@ -56,3 +56,10 @@ repository (`.agents/rules/`, `GEMINI.md`, `AGENTS.md`), not here.
     - **Plotly / Seaborn / Matplotlib**: EDA, benchmarks, distributions, confusion matrices, heatmaps.
     - **`diagrams` (Mingrammer)**: Cloud infrastructure, data pipelines, system architecture.
     - **`graphviz`**: Decision trees, state machines, algorithmic decision flows.
+
+### Text Density & Visual Hygiene
+- **One visual = one main idea**: Never overload a single chart with competing concepts.
+- **Concise labels**: Use short words or abbreviations; rename verbose raw fields before rendering.
+- **Short titles & no embedded paragraphs**: Keep titles $\le 1$ line; put explanations in markdown text, not inside the visual.
+- **Focused annotations**: Max 1–3 key data callouts. If text collides, shorten labels before expanding canvas.
+- **Zero duplication**: Do not repeat identical text across title, legend, and annotations.

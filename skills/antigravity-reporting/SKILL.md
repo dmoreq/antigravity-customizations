@@ -49,6 +49,14 @@ Skip formal reports and visuals for simple answers — prefer concise text + tab
   - **`graphviz`**: Decision trees, state machines, algorithmic flows.
 - Do not embed raw HTML or iframes in static Markdown.
 
+### Text Density & Visual Hygiene
+- **One visual = one main idea**: Do not overload a single visual with competing narratives.
+- **Titles**: Short, specific, max ~1 line. Avoid subtitles inside the visual; place explanation in surrounding prose.
+- **Labels & Legends**: Concise words or abbreviations. Rename verbose raw fields before rendering.
+- **Annotations**: Highlight only 1–3 key insights/milestones; never embed paragraphs in the canvas.
+- **Collision Handling**: If text collides, shorten labels first before enlarging canvas width/height.
+- **Zero Duplication**: Never repeat identical text across title, subtitle, legend, and annotations.
+
 ---
 
 ## 4. Content Standards
@@ -65,6 +73,7 @@ Skip formal reports and visuals for simple answers — prefer concise text + tab
 - [ ] Professional engineering tone (no emojis, no Unicode sparklines/bars)
 - [ ] Tables preferred; charts added only when delivering non-obvious insights
 - [ ] Correct visualization tier selected (Mermaid supported headers or Vector .svg)
+- [ ] Text density rules applied (1 idea/visual, short labels, $\le 1$ line title, no text collisions)
 - [ ] Relative paths used for embedded assets
 - [ ] All claims backed by quantitative numbers/deltas
 - [ ] No unnecessary reports or superfluous visuals created

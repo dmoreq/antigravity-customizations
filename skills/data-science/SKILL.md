@@ -41,6 +41,7 @@ Use this skill for data science tasks: exploratory analysis, statistical modelin
 - Always report effect sizes, confidence intervals, and practical significance — not just p-values.
 - Check assumptions and test model robustness.
 - Separate exploratory findings from confirmatory results.
+- Keep plots clean and focused: short labels, no overlapping text, 1 primary insight per visual.
 - Focus on actionable insights over technical complexity.
 - Flag data quality issues and potential biases early.
 

@@ -46,8 +46,9 @@ Use this flow for most stories:
 ## Visualization Guidance
 - Default to clean Markdown tables with absolute numbers + deltas.
 - Use charts only when they reveal patterns not obvious in a compact table.
-- Annotate key points (events, thresholds, segments).
-- Keep visuals simple and progressive.
+- **One visual = one idea**: Keep charts simple, focused, and progressive.
+- **Low text density in visuals**: Short labels, $\le 1$ line titles; keep lengthy narrative and context in the surrounding markdown prose.
+- Annotate only 1–3 critical inflection points (events, thresholds, milestones).
 
 ## Output Expectations
 - Start with a strong headline or TL;DR containing the key insight.
