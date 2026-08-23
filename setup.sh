@@ -6,6 +6,7 @@ set -e
 # 1. Google Antigravity (~/.gemini)
 # 2. Cursor (~/.cursor)
 # 3. Pi Agent (~/.pi)
+# 4. Grok CLI (~/.grok)
 
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 RULES_FILE="$REPO_DIR/rules/GEMINI.md"
@@ -54,14 +55,31 @@ DEST_PI="$HOME/.pi/agent"
 DEST_PI_SKILLS="$DEST_PI/skills"
 
 if [ -d "$HOME/.pi" ]; then
-    echo "==> [3/3] Syncing to Pi Agent (~/.pi)..."
+    echo "==> [3/4] Syncing to Pi Agent (~/.pi)..."
     mkdir -p "$DEST_PI" "$DEST_PI_SKILLS"
     rm -rf "$DEST_PI_SKILLS"/*
     cp "$RULES_FILE" "$DEST_PI/APPEND_SYSTEM.md"
     cp -R "$SKILLS_DIR"/* "$DEST_PI_SKILLS/"
     echo "    ✓ Pi system prompt & skills updated."
 else
-    echo "==> [3/3] Skipping Pi (~/.pi not found)."
+    echo "==> [3/4] Skipping Pi (~/.pi not found)."
+fi
+
+# ------------------------------------------------------------------
+# 4. Grok CLI Setup
+# ------------------------------------------------------------------
+DEST_GROK="$HOME/.grok"
+DEST_GROK_SKILLS="$DEST_GROK/skills"
+
+if [ -d "$DEST_GROK" ] || command -v grok &> /dev/null; then
+    echo "==> [4/4] Syncing to Grok CLI (~/.grok)..."
+    mkdir -p "$DEST_GROK" "$DEST_GROK_SKILLS"
+    cp "$RULES_FILE" "$DEST_GROK/AGENTS.md"
+    rm -rf "$DEST_GROK_SKILLS"/*
+    cp -R "$SKILLS_DIR"/* "$DEST_GROK_SKILLS/"
+    echo "    ✓ Grok global rules (AGENTS.md) & skills updated."
+else
+    echo "==> [4/4] Skipping Grok (~/.grok not found)."
 fi
 
 echo "========================================================"

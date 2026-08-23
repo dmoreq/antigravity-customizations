@@ -1,6 +1,6 @@
 # Antigravity Customizations
 
-A curated, token-efficient collection of **Global Agent Rules** and **Custom Skills** designed for the **Google Antigravity**, **Cursor**, and **Pi** coding assistant environments.
+A curated, token-efficient collection of **Global Agent Rules** and **Custom Skills** designed for the **Google Antigravity**, **Cursor**, **Pi**, and **Grok** coding assistant environments.
 
 ---
 
@@ -191,7 +191,7 @@ deprecation-migration
 
 ### Option 1: Automatic Setup Script (Recommended)
 
-Run `setup.sh` to install or sync across **Antigravity**, **Cursor**, and **Pi**:
+Run `setup.sh` to install or sync across **Antigravity**, **Cursor**, **Pi**, and **Grok**:
 
 ```bash
 chmod +x setup.sh
