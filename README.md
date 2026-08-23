@@ -11,6 +11,7 @@ antigravity-customizations/
 ├── rules/
 │   └── GEMINI.md                    # Global agent behavioral directives & standards
 ├── skills/
+│   ├── algorithm-and-process-optimization/ # Systematic KPI & algorithm improvement loop
 │   ├── antigravity-reporting/       # Technical reporting, benchmarks & 2-tier visualization
 │   ├── code-review-and-quality/     # Multi-axis code review checklist before merging
 │   ├── context7-mcp/                # Live documentation lookup for libraries/frameworks
@@ -35,6 +36,7 @@ antigravity-customizations/
 
 | Skill Name | Purpose |
 | :--- | :--- |
+| **`algorithm-and-process-optimization`** | Systematic workflow to optimize algorithms/processes against target metrics while guarding healthy cases. |
 | **`antigravity-reporting`** | Clean technical reports, benchmarks, and Tier 1 (Mermaid) / Tier 2 (Vector SVG) visualizations. |
 | **`tech-research`** | SOTA methods, benchmark evaluation, and conditional recommendations before implementation. |
 | **`data-scientist`** | Statistical modeling, machine learning, A/B testing, exploratory analysis, and causal inference. |
