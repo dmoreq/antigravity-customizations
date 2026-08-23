@@ -88,6 +88,7 @@ Produce a structured report covering:
 ## Related Skills
 - Use **tech-research** when better algorithms, methods, or SOTA options are needed.
 - Use **data-science** for deeper statistical analysis, segmentation, or metric diagnosis.
+- Use **data-visualization** to plot before/after metric comparisons and KPI distributions.
 - Use **python-performance** when the bottleneck is runtime, memory, or I/O efficiency.
 - Follow **antigravity-reporting** for the final before/after optimization report.
 

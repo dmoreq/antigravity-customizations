@@ -93,8 +93,8 @@ When diagnosing and fixing bugs, follow this 4-step loop:
 - [ ] Test runtime stays reasonable
 
 ## Related Skills
-- Use with **python-pro** and **python-concurrency** to protect implementation changes.
-- Use **code-review** as the final quality gate before merge.
+- Use with **python-pro**, **python-concurrency**, **doubt-driven-development**, and **deprecation-migration** to protect behavior and prevent regressions.
+- Serves as the required safety net before **code-review**.
 
 ## Output Expectations
 - Clear recommendation of test layers needed

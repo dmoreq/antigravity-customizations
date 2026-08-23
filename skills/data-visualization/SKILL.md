@@ -87,6 +87,7 @@ If categories are many or names are long → prefer horizontal bar.
 
 ## Related Skills
 - Use **data-science** for analysis that produces the metrics/data to visualize.
+- Use for benchmark charts from **python-performance** or before/after metric distributions from **algorithm-optimization**.
 - Use **antigravity-reporting** when embedding figures into formal reports.
 - Use **data-storytelling** when the chart supports a decision narrative.
 - Use **tech-research** only when an unfamiliar visualization method is needed.
