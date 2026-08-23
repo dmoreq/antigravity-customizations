@@ -2,44 +2,98 @@
 name: python-testing-patterns
 description: "Implement comprehensive testing strategies with pytest, fixtures, mocking, and test-driven development. Use when writing Python tests, setting up test suites, or implementing testing best practices."
 risk: safe
-source: community
+source: local
 date_added: "2026-02-27"
 ---
 
-# Python Testing Patterns
+# Python Testing Patterns Skill
 
-Comprehensive guide to implementing robust testing strategies in Python using pytest, fixtures, mocking, parameterization, and test-driven development practices.
+Practical guidance for designing and writing effective Python tests with pytest.
 
-## Use this skill when
+## When to Use
+- Writing unit, integration, or API tests in Python
+- Setting up pytest suites, fixtures, and test layout
+- Applying TDD in a pragmatic way
+- Mocking external dependencies
+- Testing async code
+- Improving flaky, slow, or hard-to-maintain tests
 
-- Writing unit tests for Python code
-- Setting up test suites and test infrastructure
-- Implementing test-driven development (TDD)
-- Creating integration tests for APIs and services
-- Mocking external dependencies and services
-- Testing async code and concurrent operations
-- Setting up continuous testing in CI/CD
-- Implementing property-based testing
-- Testing database operations
-- Debugging failing tests
+## When Not to Use
+- Non-Python testing
+- Pure production-feature implementation with no test intent
+- Load/performance benchmarking as the primary goal
 
-## Do not use this skill when
+## Core Principles
+1. Test behavior and contracts, not implementation details.
+2. Prefer fast, deterministic unit tests for core logic.
+3. Use integration tests for boundaries (DB, API, filesystem).
+4. Mock only what you do not own or cannot control reliably.
+5. Keep tests readable: arrange → act → assert.
+6. Optimize for maintainability over maximum coverage theater.
 
-- The task is unrelated to python testing patterns
-- You need a different domain or tool outside this scope
+## Test Strategy
+| Layer | Purpose | Typical Tools |
+| :--- | :--- | :--- |
+| **Unit** | Business logic, pure functions, services | pytest, parametrize |
+| **Integration** | API routes, DB, queue, external boundaries | pytest + TestClient/httpx |
+| **End-to-end** | Critical user/system flows | fewer, high-value tests |
 
-## Instructions
+Prioritize:
+1. Critical paths
+2. Edge cases and failure modes
+3. Regression coverage for previously fixed bugs
 
-- Clarify goals, constraints, and required inputs.
-- Apply relevant best practices and validate outcomes.
-- Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.md`.
+## Pytest Patterns
+- Use **fixtures** for reusable setup, not hidden magic.
+- Use **parametrize** for input matrix testing.
+- Prefer factory helpers over giant fixture graphs.
+- Keep one main behavior per test.
+- Name tests by behavior: `test_rejects_invalid_token`, not `test_1`.
 
-## Resources
+## Mocking Guidelines
+Mock when:
+- External HTTP APIs
+- Third-party services
+- Time, randomness, or unstable boundaries
 
-- `resources/implementation-playbook.md` for detailed patterns and examples.
+Do not mock when:
+- The logic under test itself
+- In-process pure functions
+- Local code you can exercise directly
 
-## Limitations
-- Use this skill only when the task clearly matches the scope described above.
-- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
-- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+Prefer explicit mocks and fakes over over-spy heavy tests.
+
+## Async Testing
+- Use `pytest-asyncio` for async def tests.
+- Test success, timeout, cancellation, and exception paths.
+- Avoid `sleep`-based assertions when deterministic waits are possible.
+
+## TDD Guidance
+Use TDD when it improves design clarity:
+1. Write a failing test for the intended behavior
+2. Implement the minimal code to pass
+3. Refactor with tests green
+
+Skip rigid TDD ritual for pure exploration spikes; add tests before stabilizing the code.
+
+## Test Design Checklist
+- [ ] Behavior under test is clear
+- [ ] Test is deterministic and isolated
+- [ ] Assertions are specific and meaningful
+- [ ] External dependencies are handled appropriately
+- [ ] Failure messages are diagnosable
+- [ ] Edge cases and error paths are considered
+- [ ] Test runtime stays reasonable
+
+## Related Skills
+- Use **python-pro** for implementation style and project tooling.
+- Use **python-concurrency** when tests involve async/concurrent behavior.
+- Use **python-performance-optimization** only when tests are specifically for performance diagnosis.
+- Use **code-review-and-quality** as a final quality gate.
+
+## Output Expectations
+- Clear recommendation of test layers needed
+- Concrete pytest structure and naming
+- Focused examples when useful
+- Notes on trade-offs (what to mock, what not to mock)
+- Guidance that keeps tests maintainable
