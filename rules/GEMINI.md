@@ -29,12 +29,18 @@ repository (`.agents/rules/`, `GEMINI.md`, `AGENTS.md`), not here.
 - Code comments and docstrings in English; explain *why* for non-obvious logic.
 - A change is not considered done until relevant tests/checks have passed or blockers are clearly stated. Follow `.agents/workflows/` when defined.
 
-## 4. Safety
-- Never commit secrets, tokens, or `.env` files. Never log passwords, keys, or sensitive PII.
-- Validate/sanitize inputs at external boundaries and parameterize all database queries.
-- Do not run destructive git commands (`reset --hard`, force-push) unless explicitly requested.
-- Treat production data stores, live Elasticsearch, and large dataset jobs as high-risk: confirm before running, keep limits/workers conservative, and prefer dry-runs/samples.
-- Prefer the repository's virtualenv / `uv` / package manager over global tool installations.
+## 4. Safety & Workspace Hygiene
+- **Secrets & PII**: Never commit secrets, tokens, or `.env` files. Never log passwords, keys, or sensitive PII.
+- **Input Validation**: Validate/sanitize inputs at external boundaries and parameterize all database queries.
+- **Git Safety**: Do not run destructive git commands (`reset --hard`, force-push) unless explicitly requested.
+- **High-Risk Operations**: Treat production data stores, live Elasticsearch, and large dataset jobs as high-risk: confirm before running, keep limits/workers conservative, and prefer dry-runs/samples.
+- **Tool Isolation**: Prefer the repository's virtualenv / `uv` / package manager over global tool installations.
+- **Temporary File Strategy**:
+  - Use a dedicated, gitignored temporary directory (e.g., `.tmp/` or conversation scratch directory) for intermediate files, downloads, extracts, and scratch builds.
+  - Ensure the temporary directory is listed in `.gitignore` before creating transient files.
+  - Keep final deliverables outside temp in standard project paths; never leave permanent assets in temp folders.
+  - Clean up temporary files after execution/verification when they are no longer needed.
+  - Never delete user-owned files, project source code, or final deliverables without explicit confirmation.
 
 ## 5. Reporting & Visual Assets
 
