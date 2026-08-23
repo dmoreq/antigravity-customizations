@@ -82,6 +82,7 @@ Keep only the 3–5 most relevant options.
 
 ## Related Skills
 - Use **algorithm-optimization** when candidate approaches need validation on real data and KPIs.
+- Use **deprecation-migration** when research leads to replacing legacy systems or APIs.
 - Use **context7-mcp** when accurate, up-to-date library/API docs are required.
 - Follow **antigravity-reporting** when producing a structured comparison or formal research write-up.
 

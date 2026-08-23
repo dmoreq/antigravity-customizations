@@ -19,6 +19,7 @@ antigravity-customizations/
 │   ├── data-science/                # EDA, modeling, statistics, causal inference & A/B testing
 │   ├── data-storytelling/           # Decision-ready narratives for business stakeholders
 │   ├── data-visualization/          # Plotly-first charts, layout optimization & anti-overlap QA
+│   ├── deprecation-migration/       # Safe removal, replacement & sunsetting of legacy APIs/systems
 │   ├── python-concurrency/          # Concurrency models: asyncio, thread pool, process pool
 │   ├── python-patterns/             # Pragmatic architecture, framework choice & typing principles
 │   ├── python-performance/          # Profile-driven performance optimization
@@ -41,6 +42,7 @@ antigravity-customizations/
 | **`data-science`** | Statistical modeling, machine learning, A/B testing, exploratory analysis, and causal inference. |
 | **`data-storytelling`** | Turning quantitative analytics into decision-focused stories for stakeholders. |
 | **`data-visualization`** | Plotly-first clean visual creation, SVG export, text density hygiene, and anti-overlap QA. |
+| **`deprecation-migration`** | Safely sunset, replace, and migrate legacy APIs/systems using Strangler, Adapter, and Feature Flags. |
 | **`python-pro`** | Idiomatic Python 3.12+ development, strong typing, `uv`, `ruff`, and backward compatibility. |
 | **`python-patterns`** | Architectural decision-making: async vs sync, framework choice, and project structure. |
 | **`python-concurrency`** | Concurrency models: `asyncio` for I/O, `ThreadPool` for blocking I/O, `ProcessPool` for CPU. |
