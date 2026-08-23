@@ -23,9 +23,9 @@ Expert guidance for writing clean, typed, and production-ready Python code, with
 ## Related Skills
 - Use **python-patterns** for framework, structure, and architecture decisions.
 - Use **python-concurrency** for async/parallel implementation choices.
-- Use **python-testing-patterns** to protect behavior with tests.
+- Use **python-testing** to protect behavior with tests.
 - Use **context7-mcp** for current library/API documentation.
-- Use **code-review-and-quality** before merge.
+- Use **code-review** before merge.
 
 ## Version Handling
 - Always confirm the target Python version first.

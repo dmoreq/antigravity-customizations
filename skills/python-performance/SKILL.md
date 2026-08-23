@@ -1,5 +1,5 @@
 ---
-name: python-performance-optimization
+name: python-performance
 description: "Profile and optimize Python code using cProfile, memory profilers, and performance best practices. Use when debugging slow Python code, optimizing bottlenecks, or improving application performance."
 risk: safe
 source: local
@@ -24,9 +24,9 @@ Practical guidance for finding and fixing real performance problems in Python co
 
 ## Related Skills
 - Use **tech-research** when a better algorithm/library may be required.
-- Use **data-scientist** when the issue involves analytical metrics or model behavior.
+- Use **data-science** when the issue involves analytical metrics or model behavior.
 - Use **python-concurrency** when the bottleneck is I/O-bound or CPU-parallel.
-- Use **algorithm-and-process-optimization** when optimizing quality KPIs on real cases rather than pure runtime.
+- Use **algorithm-optimization** when optimizing quality KPIs on real cases rather than pure runtime.
 
 ## Core Principles
 1. **Measure first** — never optimize based on guesses.

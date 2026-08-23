@@ -22,7 +22,7 @@ Transform analysis into clear, decision-ready narratives for stakeholders.
 - Simple metric reporting without narrative need
 
 ## Related Skills
-- Base narratives on validated findings from **data-scientist**.
+- Base narratives on validated findings from **data-science**.
 - Follow **antigravity-reporting** only when the story is part of a formal technical report.
 
 ## Core Structure

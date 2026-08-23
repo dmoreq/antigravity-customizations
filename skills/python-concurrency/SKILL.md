@@ -31,9 +31,9 @@ Expert guidance for selecting and implementing the right concurrency or parallel
 
 ## Related Skills
 - Use **python-patterns** when the broader architecture choice is still open.
-- Use **python-performance-optimization** to measure whether concurrency/parallelism actually helps.
-- Use **python-testing-patterns** for async/concurrent test coverage.
-- Use **code-review-and-quality** before merge.
+- Use **python-performance** to measure whether concurrency/parallelism actually helps.
+- Use **python-testing** for async/concurrent test coverage.
+- Use **code-review** before merge.
 
 ---
 

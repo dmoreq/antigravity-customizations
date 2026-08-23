@@ -59,7 +59,7 @@ If the question covers multiple distinct topics, make separate `query-docs` call
 - Prefer the official/primary package when multiple matches appear.
 
 ## Related Skills
-- Support **python-pro**, **python-concurrency**, **tech-research**, and **data-scientist** with up-to-date library/API documentation.
+- Support **python-pro**, **python-concurrency**, **tech-research**, and **data-science** with up-to-date library/API documentation.
 - Do not replace **tech-research** when the task needs approach comparison or SOTA survey.
 
 ## Final Checklist

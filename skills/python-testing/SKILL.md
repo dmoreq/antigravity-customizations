@@ -1,12 +1,12 @@
 ---
-name: python-testing-patterns
+name: python-testing
 description: "Implement comprehensive testing strategies with pytest, fixtures, mocking, and test-driven development. Use when writing Python tests, setting up test suites, or implementing testing best practices."
 risk: safe
 source: local
 date_added: "2026-02-27"
 ---
 
-# Python Testing Patterns Skill
+# Python Testing Skill
 
 Practical guidance for designing and writing effective Python tests with pytest.
 
@@ -87,7 +87,7 @@ Skip rigid TDD ritual for pure exploration spikes; add tests before stabilizing 
 
 ## Related Skills
 - Use with **python-pro** and **python-concurrency** to protect implementation changes.
-- Use **code-review-and-quality** as the final quality gate before merge.
+- Use **code-review** as the final quality gate before merge.
 
 ## Output Expectations
 - Clear recommendation of test layers needed

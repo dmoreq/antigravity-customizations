@@ -1,12 +1,12 @@
 ---
-name: code-review-and-quality
+name: code-review
 description: "Conduct multi-axis code review. Use before merging any change. Evaluates correctness, readability, architecture, security, and performance with actionable severity labels."
 risk: safe
 source: local
 date_added: "2026-02-27"
 ---
 
-# Code Review and Quality Skill
+# Code Review Skill
 
 Multi-axis code review with a practical approval standard: approve when the change clearly improves overall code health, even if it is not perfect.
 
@@ -65,7 +65,7 @@ Do not block only because the solution is not exactly how you would have written
 
 If deeper investigation is needed:
 - Security deep-dive → dedicated security guidance
-- Runtime bottleneck analysis → `python-performance-optimization`
+- Runtime bottleneck analysis → `python-performance`
 
 ## Review Process
 1. **Understand intent** — what changed, why, expected behavior
@@ -116,8 +116,8 @@ After review/refactor, identify newly unused code and ask before deleting when u
 
 ## Related Skills
 - Send implementation fixes to **python-pro**.
-- Use **python-testing-patterns** when tests are missing or weak.
-- Use **python-performance-optimization** only for confirmed runtime concerns.
+- Use **python-testing** when tests are missing or weak.
+- Use **python-performance** only for confirmed runtime concerns.
 - Use **context7-mcp** when reviewing API usage against current docs.
 
 ## Review Checklist

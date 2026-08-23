@@ -11,17 +11,17 @@ antigravity-customizations/
 ├── rules/
 │   └── GEMINI.md                    # Global agent behavioral directives & standards
 ├── skills/
-│   ├── algorithm-and-process-optimization/ # Systematic KPI & algorithm improvement loop
+│   ├── algorithm-optimization/      # Systematic KPI & algorithm improvement loop
 │   ├── antigravity-reporting/       # Technical reporting, benchmarks & 2-tier visualization
-│   ├── code-review-and-quality/     # Multi-axis code review checklist before merging
+│   ├── code-review/                 # Multi-axis code review checklist before merging
 │   ├── context7-mcp/                # Live documentation lookup for libraries/frameworks
-│   ├── data-scientist/              # EDA, modeling, statistics, causal inference & A/B testing
+│   ├── data-science/                # EDA, modeling, statistics, causal inference & A/B testing
 │   ├── data-storytelling/           # Decision-ready narratives for business stakeholders
 │   ├── python-concurrency/          # Concurrency models: asyncio, thread pool, process pool
 │   ├── python-patterns/             # Pragmatic architecture, framework choice & typing principles
-│   ├── python-performance-optimization/ # Profile-driven performance optimization
+│   ├── python-performance/          # Profile-driven performance optimization
 │   ├── python-pro/                  # Modern Python 3.12+ engineering & legacy version handling
-│   ├── python-testing-patterns/     # Testing strategies with pytest, fixtures & TDD
+│   ├── python-testing/              # Testing strategies with pytest, fixtures & TDD
 │   └── tech-research/               # SOTA survey, benchmark comparison & technical trade-offs
 ├── setup.sh                         # Automatic installer script for ~/.gemini
 └── README.md
@@ -33,17 +33,17 @@ antigravity-customizations/
 
 | Skill Name | Purpose |
 | :--- | :--- |
-| **`algorithm-and-process-optimization`** | Systematic workflow to optimize algorithms/processes against target metrics while guarding healthy cases. |
+| **`algorithm-optimization`** | Systematic workflow to optimize algorithms/processes against target metrics while guarding healthy cases. |
 | **`antigravity-reporting`** | Clean technical reports, benchmarks, and Tier 1 (Mermaid) / Tier 2 (Vector SVG) visualizations. |
 | **`tech-research`** | SOTA methods, benchmark evaluation, and conditional recommendations before implementation. |
-| **`data-scientist`** | Statistical modeling, machine learning, A/B testing, exploratory analysis, and causal inference. |
+| **`data-science`** | Statistical modeling, machine learning, A/B testing, exploratory analysis, and causal inference. |
 | **`data-storytelling`** | Turning quantitative analytics into decision-focused stories for stakeholders. |
 | **`python-pro`** | Idiomatic Python 3.12+ development, strong typing, `uv`, `ruff`, and backward compatibility. |
 | **`python-patterns`** | Architectural decision-making: async vs sync, framework choice, and project structure. |
 | **`python-concurrency`** | Concurrency models: `asyncio` for I/O, `ThreadPool` for blocking I/O, `ProcessPool` for CPU. |
-| **`python-performance-optimization`** | Measure-first, profile-driven optimization with `cProfile`, `py-spy`, and memory profilers. |
-| **`python-testing-patterns`** | Pytest strategies, focused fixtures, mocking, and robust test suites. |
-| **`code-review-and-quality`** | Systematic code review across correctness, security, performance, and style. |
+| **`python-performance`** | Measure-first, profile-driven optimization with `cProfile`, `py-spy`, and memory profilers. |
+| **`python-testing`** | Pytest strategies, focused fixtures, mocking, and robust test suites. |
+| **`code-review`** | Systematic code review across correctness, security, performance, and style. |
 | **`context7-mcp`** | Fetching up-to-date documentation and code references via Context7 MCP. |
 
 ---

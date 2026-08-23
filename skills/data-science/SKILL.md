@@ -1,12 +1,12 @@
 ---
-name: data-scientist
-description: "Expert data scientist for advanced analytics, machine learning, and statistical modeling. Handles complex data analysis, predictive modeling, and business intelligence."
+name: data-science
+description: "Expert data science guidance for advanced analytics, machine learning, and statistical modeling. Handles complex data analysis, predictive modeling, and business intelligence."
 risk: safe
 source: local
 date_added: "2026-02-27"
 ---
 
-# Data Scientist Skill
+# Data Science Skill
 
 Use this skill for data science tasks: exploratory analysis, statistical modeling, machine learning, experimentation, forecasting, and turning data into business insights.
 
@@ -23,7 +23,7 @@ Use this skill for data science tasks: exploratory analysis, statistical modelin
 - Tasks outside data science / analytics scope
 
 ## Related Skills
-- Use **algorithm-and-process-optimization** when findings should drive iterative KPI improvement on real cases.
+- Use **algorithm-optimization** when findings should drive iterative KPI improvement on real cases.
 - Use **data-storytelling** when results must be communicated to non-technical stakeholders.
 - Use **context7-mcp** for library/API documentation when needed.
 - Follow **antigravity-reporting** when producing a formal analytical report.
@@ -59,4 +59,3 @@ Use this skill for data science tasks: exploratory analysis, statistical modelin
 - [ ] Assumptions and limitations explicitly stated
 - [ ] Recommendations are feasible and actionable
 - [ ] Concrete next steps and verification methods provided
-

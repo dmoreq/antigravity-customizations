@@ -1,12 +1,12 @@
 ---
-name: algorithm-and-process-optimization
+name: algorithm-optimization
 description: "Systematic workflow to improve algorithms or process flows using real input data and target metrics, without harming already-good performance."
 risk: safe
 source: local
 date_added: "2026-08-23"
 ---
 
-# Algorithm & Process Optimization Skill
+# Algorithm Optimization Skill
 
 Systematic workflow to improve algorithms or process flows using real input data and target metrics, without harming already-good performance.
 
@@ -86,8 +86,8 @@ Produce a structured report covering:
 
 ## Related Skills
 - Use **tech-research** when better algorithms, methods, or SOTA options are needed.
-- Use **data-scientist** for deeper statistical analysis, segmentation, or metric diagnosis.
-- Use **python-performance-optimization** when the bottleneck is runtime, memory, or I/O efficiency.
+- Use **data-science** for deeper statistical analysis, segmentation, or metric diagnosis.
+- Use **python-performance** when the bottleneck is runtime, memory, or I/O efficiency.
 - Follow **antigravity-reporting** for the final before/after optimization report.
 
 ## Final Checklist
