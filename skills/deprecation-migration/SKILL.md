@@ -50,6 +50,7 @@ Plan and execute safe removal or replacement of systems, APIs, and legacy featur
 ## Related Skills
 - Triggered by **code-review** when identifying legacy, unused, or duplicate surfaces.
 - Use **tech-research** when evaluating and selecting replacement technologies or libraries.
+- Use **doubt-driven-development** for high-risk cutover and sunsetting decisions.
 - Use **python-testing** for migration verification, compatibility testing, and regression safety.
 - Use **code-simplification** for clean shim removal and adapter refactoring.
 

@@ -55,6 +55,7 @@ Simplify code for clarity and maintainability without changing behavior.
 - Use **python-testing** to protect existing behavior with tests while simplifying.
 - Use **python-pro** for idiomatic implementation style and tooling conventions.
 - Use **tech-research** when contemplating non-trivial architectural redesign.
+- Use **doubt-driven-development** for high-risk redesign choices rather than routine cleanup.
 
 ## Final Checklist
 - [ ] Behavior preserved exactly (inputs, outputs, exceptions, side-effects)
