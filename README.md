@@ -1,6 +1,6 @@
 # Antigravity Customizations
 
-A curated, token-efficient collection of **Global Agent Rules** and **Custom Skills** designed for the **Google Antigravity** coding assistant environment.
+A curated, token-efficient collection of **Global Agent Rules** and **Custom Skills** designed for the **Google Antigravity**, **Cursor**, and **Pi** coding assistant environments.
 
 ---
 
@@ -27,7 +27,7 @@ antigravity-customizations/
 │   ├── python-pro/                  # Modern Python 3.12+ engineering & legacy version handling
 │   ├── python-testing/              # Testing strategies with pytest, fixtures & TDD
 │   └── tech-research/               # SOTA survey, benchmark comparison & technical trade-offs
-├── setup.sh                         # Automatic installer script for ~/.gemini
+├── setup.sh                         # Unified multi-agent setup script (Antigravity, Cursor, Pi)
 └── README.md
 ```
 
@@ -56,11 +56,137 @@ antigravity-customizations/
 
 ---
 
+## Skill Relationship Map (Optimized)
+
+### Core Principles
+- Hầu hết quan hệ là **optional handoff** (chỉ kích hoạt khi thật sự có điều kiện).
+- Chỉ duy trì **3 quan hệ cứng (Hard Invariants)** cốt lõi.
+- **Không bao giờ chain dài theo mặc định** để tối ưu hóa context và token.
+
+### 1. Bảng quan hệ chuẩn
+
+| Nhóm | Skill | Nhận từ (Input) | Chuyển đến (Output) | Mức độ |
+| :--- | :--- | :--- | :--- | :--- |
+| **Discovery** | **`context7-mcp`** | Nhu cầu docs/API cụ thể, version-sensitive | `python-pro`, `python-concurrency`, `tech-research`, `data-science` | Optional |
+| **Discovery** | **`tech-research`** | Nhu cầu SOTA, alternatives, trade-offs kỹ thuật | `doubt-driven-development` (khi chốt quyết định); `deprecation-migration` (thay hệ thống cũ); `antigravity-reporting` (formal report); `algorithm-optimization` (validate trên data thật) | Optional |
+| **Decision** | **`doubt-driven-development`** | Quyết định non-trivial từ `tech-research`, `python-patterns`, architecture / cutover decisions | `python-testing` (chốt risk thành regression test); `tech-research` (nếu thiếu alternatives); implementation path rồi qua `code-review` | Optional, có điều kiện |
+| **Migration** | **`deprecation-migration`** | Legacy/zombie code từ `code-review`; replacement options từ `tech-research` | `python-testing` (verify tương thích); `code-simplification` (dọn shim/adapter thừa sau cùng) | Optional |
+| **Analysis** | **`data-science`** | Dữ liệu thô, EDA, modeling, thống kê, A/B | `data-visualization` (vẽ chart); `data-storytelling` (narrative); `algorithm-optimization` (tối ưu KPI); `antigravity-reporting` (formal report) | Optional / Required* |
+| **Visualization** | **`data-visualization`** | Metric/insight từ `data-science`; before/after từ `algorithm-optimization`; benchmark từ `python-performance` | `antigravity-reporting`, `data-storytelling` | Optional |
+| **Narrative** | **`data-storytelling`** | Insight đã validate từ `data-science` | Dùng chart từ `data-visualization`; nhúng vào `antigravity-reporting` | **Required input from `data-science`** |
+| **Reporting** | **`antigravity-reporting`** | Kết quả formal từ `tech-research`, `data-science`, `algorithm-optimization` | Báo cáo kỹ thuật hoàn chỉnh kèm visual Tier-1/Tier-2 | Optional presentation layer |
+| **Architecture** | **`python-patterns`** | Nhu cầu chọn framework, structure, async vs sync | `python-pro` (để implement); `python-concurrency` (chọn concurrency model); ADR ngắn (khi chốt kiến trúc) | Optional |
+| **Implementation** | **`python-pro`** | Design từ `python-patterns` hoặc requirement tính năng | `python-testing` (bảo vệ behavior); `context7-mcp` (tra cứu docs); `code-review` (trước khi merge) | **Required on merge path** |
+| **Concurrency** | **`python-concurrency`** | Lựa chọn concurrency từ `python-patterns` hoặc bottleneck I/O vs CPU | `python-performance` (đo lường thực tế); `python-testing` (async/parallel safety) | Optional |
+| **Performance** | **`python-performance`** | Bottleneck runtime/memory/I/O từ implementation hoặc concurrency | `python-concurrency` (nếu đúng loại bottleneck); `tech-research` (cần approach mới); `algorithm-optimization` (nếu là quality/process KPI) | Optional |
+| **Optimization** | **`algorithm-optimization`** | KPI/process kém trên data thật; candidate từ `tech-research`; chẩn đoán từ `data-science` | `data-visualization` (before/after chart); `antigravity-reporting` (báo cáo); `python-performance` (nếu lộ runtime bottleneck) | Optional |
+| **Testing** | **`python-testing`** | Behavior change từ `python-pro`; risk từ `doubt-driven`; migration từ `deprecation-migration`; cleanup từ `code-simplification` | Safety net bắt buộc trước `code-review` | **Required for behavior changes** |
+| **Cleanup** | **`code-simplification`** | Complexity, deep nesting, duplication từ `code-review` hoặc sau feature complete | Dựa trên `python-testing` giữ nguyên behavior; đưa lại `code-review` | Optional |
+| **QA Gate** | **`code-review`** | PR/diff từ `python-pro`, `code-simplification`, `deprecation-migration`, hoặc agent khác | `python-pro` (sửa code); `code-simplification` (giảm complexity); `deprecation-migration` (sunset legacy); merge khi đạt chuẩn | **Required on merge path** |
+
+---
+
+### 2. Ba quan hệ cứng duy nhất (Hard Invariants)
+
+1. **`data-storytelling`** bắt buộc phải dựa trên insight đã được validate từ **`data-science`** (không tự bịa số liệu).
+2. **Mọi merge path vào main** bắt buộc phải qua cổng kiểm duyệt **`code-review`**.
+3. **Mọi thay đổi hành vi logic (Behavior change)** bắt buộc phải có kiểm thử từ **`python-testing`**.
+
+*Tất cả các quan hệ còn lại đều mang tính chất có điều kiện (conditional/optional).*
+
+---
+
+### 3. Sơ đồ dòng chảy tối ưu (Flowchart)
+
+```text
+context7-mcp
+    └─ docs on demand ─► python-pro / python-concurrency / tech-research / data-science
+
+tech-research
+    ├─ options/evidence ─► algorithm-optimization
+    ├─ decision to lock ─► doubt-driven-development
+    ├─ replace legacy ─► deprecation-migration
+    └─ formal write-up ─► antigravity-reporting
+
+doubt-driven-development
+    ├─ missing alternatives ─► tech-research
+    ├─ actionable risks ─► python-testing
+    └─ stable decision ─► implementation ─► code-review
+
+data-science
+    ├─ charts ─► data-visualization
+    ├─ narrative ─► data-storytelling
+    ├─ KPI loop ─► algorithm-optimization
+    └─ formal report ─► antigravity-reporting
+
+algorithm-optimization
+    ├─ visuals ─► data-visualization
+    ├─ report ─► antigravity-reporting
+    └─ runtime issue found ─► python-performance
+
+python-patterns
+    ├─ implement ─► python-pro
+    └─ concurrency choice ─► python-concurrency
+
+python-pro
+    ├─ docs ─► context7-mcp
+    ├─ tests ─► python-testing
+    └─ merge gate ─► code-review
+
+python-concurrency ◄──► python-performance
+
+code-review
+    ├─ fix code ─► python-pro
+    ├─ reduce complexity ─► code-simplification
+    └─ sunset legacy ─► deprecation-migration
+
+deprecation-migration
+    ├─ verify ─► python-testing
+    └─ optional cleanup ─► code-simplification
+```
+
+---
+
+### 4. Router nhanh theo tình huống
+
+| Tình huống thực tế | Skill ưu tiên kích hoạt |
+| :--- | :--- |
+| Tìm approach, giải pháp SOTA, khảo sát thư viện | **`tech-research`** |
+| Chốt quyết định lớn / rủi ro cao từ research hoặc kiến trúc | **`doubt-driven-development`** |
+| EDA, modeling, phân tích thống kê, A/B testing | **`data-science`** |
+| Vẽ biểu đồ chuẩn chỉnh, không đè chữ (Text Density Hygiene) | **`data-visualization`** |
+| Kể chuyện dữ liệu / trình bày insight cho stakeholder | **`data-storytelling`** |
+| Soạn thảo báo cáo kỹ thuật formal (Mermaid / SVG) | **`antigravity-reporting`** |
+| Chọn framework, cấu trúc module, thiết kế async/sync | **`python-patterns`** |
+| Lập trình tính năng bằng Python 3.12+ | **`python-pro`** |
+| Thiết kế mô hình Async / Multi-thread / Multi-process | **`python-concurrency`** |
+| Điểm nghẽn độ trễ, ngốn CPU hoặc RAM | **`python-performance`** |
+| Tối ưu chất lượng / accuracy / KPI trên dữ liệu thực tế | **`algorithm-optimization`** |
+| Viết, debug hoặc bổ sung test suite (pytest / TDD) | **`python-testing`** |
+| Code chạy đúng nhưng rối, nesting sâu, cần refactor | **`code-simplification`** |
+| Review chất lượng code trước khi merge PR | **`code-review`** |
+| Tra cứu tài liệu thư viện / API mới nhất | **`context7-mcp`** |
+| Khai tử, thay thế và chuyển đổi hệ thống / API cũ | **`deprecation-migration`** |
+
+---
+
+### 5. Anti-Patterns trong điều phối quan hệ
+
+- ❌ **Bật `antigravity-reporting` cho câu trả lời ngắn trung gian**: Gây lãng phí token không cần thiết.
+- ❌ **Bật `doubt-driven-development` cho mọi khảo sát research thông thường**: Chỉ bật khi kết quả chuẩn bị khóa thành quyết định triển khai.
+- ❌ **Dùng `python-performance` cho accuracy / confidence KPI**: Runtime bottleneck và algorithmic quality KPI là 2 bài toán khác nhau.
+- ❌ **Dùng `algorithm-optimization` cho pure runtime tuning**: Cần dùng `python-performance` có profiling thực tế.
+- ❌ **`data-storytelling` tự tạo số liệu/insight**: Luôn phải nhận insight đã được chứng thực từ `data-science`.
+- ❌ **Merge PR khi chưa qua `code-review`**: Bỏ qua cổng kiểm soát an toàn 5 trục.
+- ❌ **Chain bắt buộc Research $\rightarrow$ Optimize $\rightarrow$ Report cho mọi request**: Chỉ kích hoạt skill phù hợp trực tiếp với intent của người dùng.
+
+---
+
 ## Installation & Setup
 
 ### Option 1: Automatic Setup Script (Recommended)
 
-Run `setup.sh` to install or symlink into your local `~/.gemini/` configuration:
+Run `setup.sh` to install or sync across **Antigravity**, **Cursor**, and **Pi**:
 
 ```bash
 chmod +x setup.sh
@@ -79,12 +205,3 @@ chmod +x setup.sh
    mkdir -p ~/.gemini/config/skills
    cp -R skills/* ~/.gemini/config/skills/
    ```
-
----
-
-## Customization Precedence in Antigravity
-
-Antigravity discovers customizations hierarchically:
-1. **Workspace Project**: `.agents/` or `.agents/skills/` located in the root repository.
-2. **Global Config**: `~/.gemini/config/skills/` and `~/.gemini/GEMINI.md`.
-3. **Built-in System**: Default skills bundled with the Antigravity application.
