@@ -24,7 +24,7 @@ Use this skill for data science tasks: exploratory analysis, statistical modelin
 
 ## Related Skills
 - Use **algorithm-optimization** when findings should drive iterative KPI improvement on real cases.
-- Use **data-visualization** to create clean, publication-ready Plotly charts without text overlap.
+- Use **data-visualization** when analysis results need charts; keep in-chart text short and inspect for overlap before delivery.
 - Use **data-storytelling** when results must be communicated to non-technical stakeholders.
 - Use **context7-mcp** for library/API documentation when needed.
 - Follow **antigravity-reporting** when producing a formal analytical report.
