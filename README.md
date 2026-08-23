@@ -18,9 +18,7 @@ antigravity-customizations/
 │   ├── data-engineering-data-pipeline/ # Scalable batch and streaming pipeline architectures
 │   ├── data-scientist/              # EDA, modeling, statistics, causal inference & A/B testing
 │   ├── data-storytelling/           # Decision-ready narratives for business stakeholders
-│   ├── fastapi-pro/                 # Modern async API patterns with FastAPI & SQLAlchemy 2.0
 │   ├── python-concurrency/          # Concurrency models: asyncio, thread pool, process pool
-│   ├── python-fastapi-development/  # Production backend API design & microservices
 │   ├── python-patterns/             # Pragmatic architecture, framework choice & typing principles
 │   ├── python-performance-optimization/ # Profile-driven performance optimization
 │   ├── python-pro/                  # Modern Python 3.12+ engineering & legacy version handling
@@ -47,8 +45,6 @@ antigravity-customizations/
 | **`python-concurrency`** | Concurrency models: `asyncio` for I/O, `ThreadPool` for blocking I/O, `ProcessPool` for CPU. |
 | **`python-performance-optimization`** | Measure-first, profile-driven optimization with `cProfile`, `py-spy`, and memory profilers. |
 | **`python-testing-patterns`** | Pytest strategies, focused fixtures, mocking, and robust test suites. |
-| **`fastapi-pro`** | High-performance asynchronous APIs with FastAPI, Pydantic V2, and SQLAlchemy 2.0. |
-| **`python-fastapi-development`** | Production backend architectural guidelines and microservices patterns. |
 | **`code-review-and-quality`** | Systematic code review across correctness, security, performance, and style. |
 | **`context7-mcp`** | Fetching up-to-date documentation and code references via Context7 MCP. |
 
