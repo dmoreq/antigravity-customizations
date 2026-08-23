@@ -16,6 +16,7 @@ Skip formal reports and visuals for simple answers — prefer concise text + tab
 
 ## Related Skills
 - Use as the presentation standard for **tech-research**, **data-science**, and **algorithm-optimization** when a formal report is required.
+- Use **data-visualization** as the primary engine for creating and exporting Tier-2 Plotly charts.
 - Do not force full report format for short intermediate answers.
 
 ---

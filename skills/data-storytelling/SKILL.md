@@ -23,6 +23,7 @@ Transform analysis into clear, decision-ready narratives for stakeholders.
 
 ## Related Skills
 - Base narratives on validated findings from **data-science**.
+- Use **data-visualization** when the story requires polished, lean Plotly figures.
 - Follow **antigravity-reporting** only when the story is part of a formal technical report.
 
 ## Core Structure
