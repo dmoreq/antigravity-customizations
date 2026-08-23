@@ -26,6 +26,7 @@ antigravity-customizations/
 │   ├── python-performance/          # Profile-driven performance optimization
 │   ├── python-pro/                  # Modern Python 3.12+ engineering & legacy version handling
 │   ├── python-testing/              # Testing strategies with pytest, fixtures & TDD
+│   ├── pyo3-maturin/                # Rust native extensions with PyO3 & Maturin for CPU hotspots
 │   └── tech-research/               # SOTA survey, benchmark comparison & technical trade-offs
 ├── setup.sh                         # Unified multi-agent setup script (Antigravity, Cursor, Pi)
 └── README.md
@@ -50,6 +51,7 @@ antigravity-customizations/
 | **`python-concurrency`** | Concurrency models: `asyncio` for I/O, `ThreadPool` for blocking I/O, `ProcessPool` for CPU. |
 | **`python-performance`** | Measure-first, profile-driven optimization with `cProfile`, `py-spy`, and memory profilers. |
 | **`python-testing`** | Pytest strategies, focused fixtures, mocking, and robust test suites. |
+| **`pyo3-maturin`** | High-performance Rust native extensions with PyO3 and Maturin for CPU-bound hotspots. |
 | **`code-review`** | Systematic code review across correctness, security, performance, and style. |
 | **`code-simplification`** | Safe refactoring to improve readability and reduce nesting without changing behavior. |
 | **`context7-mcp`** | Fetching up-to-date documentation and code references via Context7 MCP. |
@@ -78,11 +80,12 @@ antigravity-customizations/
 | **Architecture** | **`python-patterns`** | Nhu cầu chọn framework, structure, async vs sync | `python-pro` (để implement); `python-concurrency` (chọn concurrency model); ADR ngắn (khi chốt kiến trúc) | Optional |
 | **Implementation** | **`python-pro`** | Design từ `python-patterns` hoặc requirement tính năng | `python-testing` (bảo vệ behavior); `context7-mcp` (tra cứu docs); `code-review` (trước khi merge) | **Required on merge path** |
 | **Concurrency** | **`python-concurrency`** | Lựa chọn concurrency từ `python-patterns` hoặc bottleneck I/O vs CPU | `python-performance` (đo lường thực tế); `python-testing` (async/parallel safety) | Optional |
-| **Performance** | **`python-performance`** | Bottleneck runtime/memory/I/O từ implementation hoặc concurrency | `python-concurrency` (nếu đúng loại bottleneck); `tech-research` (cần approach mới); `algorithm-optimization` (nếu là quality/process KPI) | Optional |
+| **Performance** | **`python-performance`** | Bottleneck runtime/memory/I/O từ implementation hoặc concurrency | `pyo3-maturin` (nếu là CPU-bound hotspot cần native Rust); `python-concurrency` (nếu đúng loại bottleneck); `tech-research` (cần approach mới); `algorithm-optimization` (nếu là quality/process KPI) | Optional |
+| **Native Extension** | **`pyo3-maturin`** | CPU-bound bottleneck đã profile từ `python-performance` | `python-testing` (parity và regression test); `code-review` (trước khi merge) | Optional |
 | **Optimization** | **`algorithm-optimization`** | KPI/process kém trên data thật; candidate từ `tech-research`; chẩn đoán từ `data-science` | `data-visualization` (before/after chart); `antigravity-reporting` (báo cáo); `python-performance` (nếu lộ runtime bottleneck) | Optional |
-| **Testing** | **`python-testing`** | Behavior change từ `python-pro`; risk từ `doubt-driven`; migration từ `deprecation-migration`; cleanup từ `code-simplification` | Safety net bắt buộc trước `code-review` | **Required for behavior changes** |
+| **Testing** | **`python-testing`** | Behavior change từ `python-pro`; parity từ `pyo3-maturin`; risk từ `doubt-driven`; migration từ `deprecation-migration`; cleanup từ `code-simplification` | Safety net bắt buộc trước `code-review` | **Required for behavior changes** |
 | **Cleanup** | **`code-simplification`** | Complexity, deep nesting, duplication từ `code-review` hoặc sau feature complete | Dựa trên `python-testing` giữ nguyên behavior; đưa lại `code-review` | Optional |
-| **QA Gate** | **`code-review`** | PR/diff từ `python-pro`, `code-simplification`, `deprecation-migration`, hoặc agent khác | `python-pro` (sửa code); `code-simplification` (giảm complexity); `deprecation-migration` (sunset legacy); merge khi đạt chuẩn | **Required on merge path** |
+| **QA Gate** | **`code-review`** | PR/diff từ `python-pro`, `pyo3-maturin`, `code-simplification`, `deprecation-migration`, hoặc agent khác | `python-pro` (sửa code); `code-simplification` (giảm complexity); `deprecation-migration` (sunset legacy); merge khi đạt chuẩn | **Required on merge path** |
 
 ---
 
@@ -134,6 +137,7 @@ python-pro
     └─ merge gate ─► code-review
 
 python-concurrency ◄──► python-performance
+                            └─ CPU hotspot ─► pyo3-maturin ─► python-testing ─► code-review
 
 code-review
     ├─ fix code ─► python-pro
@@ -161,6 +165,7 @@ deprecation-migration
 | Lập trình tính năng bằng Python 3.12+ | **`python-pro`** |
 | Thiết kế mô hình Async / Multi-thread / Multi-process | **`python-concurrency`** |
 | Điểm nghẽn độ trễ, ngốn CPU hoặc RAM | **`python-performance`** |
+| Tăng tốc CPU hotspot bằng Rust native extension | **`pyo3-maturin`** |
 | Tối ưu chất lượng / accuracy / KPI trên dữ liệu thực tế | **`algorithm-optimization`** |
 | Viết, debug hoặc bổ sung test suite (pytest / TDD) | **`python-testing`** |
 | Code chạy đúng nhưng rối, nesting sâu, cần refactor | **`code-simplification`** |

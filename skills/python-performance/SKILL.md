@@ -24,6 +24,7 @@ Practical guidance for finding and fixing real performance problems in Python co
 
 ## Related Skills
 - Use **tech-research** when a better algorithm/library may be required.
+- Use **pyo3-maturin** when a confirmed CPU hotspot cannot be accelerated further in Python and justifies Rust native extensions.
 - Use **data-science** when the issue involves analytical metrics or model behavior.
 - Use **python-concurrency** when the bottleneck is I/O-bound or CPU-parallel.
 - Use **algorithm-optimization** when optimizing quality KPIs on real cases rather than pure runtime.
